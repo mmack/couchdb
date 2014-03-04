@@ -94,6 +94,11 @@ start_couchdb () {
 }
 
 stop_couchdb () {
+        stop_couchdb_real
+        killall -u couchdb
+}
+
+stop_couchdb_real () {
     # Stop the running Apache CouchDB process.
 
     command="$COUCHDB -d"
